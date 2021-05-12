@@ -4,7 +4,7 @@
 $furl=trim($_GET["furl"]);
 $raw = file_get_contents($furl);
 
-$mydomain="http://www.yourdomainhere.com/";
+$mydomain="https://flixe.herokuapp.com/";
 
 //Kill anoying popups.
 $raw=str_replace("alert(","isNull(",$raw);
