@@ -13,8 +13,8 @@ $raw=str_replace("prompt(","isNull(",$raw);
 $raw=str_replace("Confirm: (","isNull(",$raw);
 
 //Modify the javascript links so they go though a filter.
-$raw=str_replace("script type=\"text/javascript\" src=\"","script type=\"text/javascript\" src=\"".$mydomain."javascriptfilter.php?jurl=",$raw);
-$raw=str_replace("script src=","script src=".$mydomain."javascriptfilter.php?jurl=",$raw);
+//$raw=str_replace("script type=\"text/javascript\" src=\"","script type=\"text/javascript\" src=\"".$mydomain."javascriptfilter.php?jurl=",$raw);
+//$raw=str_replace("script src=","script src=".$mydomain."javascriptfilter.php?jurl=",$raw);
 
 //Or kill js files
 //$raw=str_replace(".js",".off",$raw);
