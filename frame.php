@@ -22,9 +22,9 @@ $raw=str_replace("script src=","script src=".$mydomain."javascriptfilter.php?jur
 //$raw=str_replace(".js",".off",$raw);
 
 //Put in a base domain tag so images, flash and css are certain to work.
-// $replacethis="<head>";
-// $replacestring="<head><base href='".$furl."/'>";
-// $raw=str_replace($replacethis,$replacestring,$raw);
+$replacethis="<head>";
+$replacestring="<head><base href='".$furl."/'>";
+$raw=str_replace($replacethis,$replacestring,$raw);
 
 //Echo the website html to the iframe.
 echo $raw;
