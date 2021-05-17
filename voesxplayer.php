@@ -1,6 +1,6 @@
 <?php
 //Get the raw html.
-$furl=trim($_GET["furl"]);
+$furl="https://voe.sx/e/".$_GET["id"]);
 $raw = file_get_contents($furl);
 
 
