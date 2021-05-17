@@ -15,7 +15,7 @@ echo "</pre>";
 
 
 echo "<pre>";
-print_r($m[0]); 
+print_r($m[0][111]); 
 echo "</pre>";
 
 
