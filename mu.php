@@ -12,5 +12,7 @@ echo "<pre>";
 print_r($match[0]); 
 echo "</pre>";
 
-echo $m3u;
+echo "<pre>";
+print_r($raw); 
+echo "</pre>";
 ?>
