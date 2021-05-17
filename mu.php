@@ -12,5 +12,5 @@ echo "<pre>";
 print_r($match[0]); 
 echo "</pre>";
 
-echo echo $raw
+echo $raw;
 ?>
