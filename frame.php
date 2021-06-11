@@ -17,12 +17,8 @@ $raw = file_get_contents($furl);
 $html = $raw;
 
 $mydomain="https://flixe.herokuapp.com/";
-
-
 $dom = new DOMDocument();
-
 $dom->loadHTML($html);
-
 $script = $dom->getElementsByTagName('script');
 
 $remove = [];
@@ -36,6 +32,7 @@ foreach ($remove as $item)
   $item->parentNode->removeChild($item); 
 }
 
+$html = $dom->saveHTML();
 
 
 //Kill anoying popups.
