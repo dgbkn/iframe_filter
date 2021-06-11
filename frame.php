@@ -2,7 +2,7 @@
 
 //Get the raw html.
 $furl=trim($_GET["furl"]);
-echo "Given Url is ????? ".$furl;
+// echo "Given Url is ????? ".$furl;
 $raw = file_get_contents($furl);
 
 $mydomain="https://flixe.herokuapp.com/";
