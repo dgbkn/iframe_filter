@@ -13,7 +13,7 @@ $pathwfile = $formattedurl['scheme']."://".$formattedurl['host'].$formattedurl['
 $domain = $formattedurl['scheme']."://".$formattedurl['host'];
 
 $pathonly = str_replace($formattedurl['file'],"",$formattedurl['path']);
-
+echo "adsad ".$pathonly."  ".$formattedurl['file'];
 $pathwofile = $formattedurl['scheme']."://".$formattedurl['host'].$pathonly;
 
 // echo "Given Url is ????? ".$furl;
