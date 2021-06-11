@@ -8,6 +8,7 @@ $furl=trim($_GET["furl"]);
 $formattedurl = parseUrl($furl);
 
 $pathwfile = $formattedurl['scheme']."://".$formattedurl['host'].$formattedurl['path'];
+$domain = $formattedurl['scheme']."://".$formattedurl['host'];
 
 $pathonly = str_replace($formattedurl['file'],"",$formattedurl['path']);
 
@@ -31,10 +32,10 @@ foreach($script as $item)
         $item->setAttribute('src',$mydomain."javascriptfilter.php?jurl=".$old);
          }
          else if($old[0]=='/'){
-         $item->setAttribute('src',$mydomain."javascriptfilter.php?jurl=".$old);
+         $item->setAttribute('src',$mydomain."javascriptfilter.php?jurl=".$domain.$old);
 
          }else{
-          $item->setAttribute('src',$mydomain."javascriptfilter.php?jurl=".$old);
+          $item->setAttribute('src',$mydomain."javascriptfilter.php?jurl=".$pathwofile.$old);
          }
     }
 }
