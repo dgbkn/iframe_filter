@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 //Get the raw html.
 $furl=trim($_GET["furl"]);
 
-$formattedurl = parseUrl($furl);
+$formattedurl = parse_url($furl);
 
 $pathwfile = $formattedurl['scheme']."://".$formattedurl['host'].$formattedurl['path'];
 $domain = $formattedurl['scheme']."://".$formattedurl['host'];
