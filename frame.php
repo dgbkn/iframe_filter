@@ -1,4 +1,14 @@
        <?php
+function get_domain($url)
+{
+  $pieces = parse_url($url);
+  $domain = isset($pieces['host']) ? $pieces['host'] : $pieces['path'];
+  if (preg_match('/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i', $domain, $regs)) {
+    return $regs['domain'];
+  }
+  return false;
+}
+
 
 //Get the raw html.
 $furl=trim($_GET["furl"]);
@@ -28,5 +38,7 @@ $raw=str_replace($replacethis,$replacestring,$raw);
 
 //Echo the website html to the iframe.
 echo $raw;
+
+
 
 ?>
