@@ -1,8 +1,8 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 function parseUrl($url) {
     $r  = "^(?:(?P<scheme>\w+)://)?";
@@ -29,7 +29,7 @@ $pathwfile = $formattedurl['scheme']."://".$formattedurl['host'].$formattedurl['
 $domain = $formattedurl['scheme']."://".$formattedurl['host'];
 
 $pathonly = str_replace($formattedurl['file'],"",$formattedurl['path']);
-echo "adsad ".$pathonly."  ".$formattedurl['file'];
+// echo "adsad ".$pathonly."  ".$formattedurl['file'];
 $pathwofile = $formattedurl['scheme']."://".$formattedurl['host'].$pathonly;
 
 // echo "Given Url is ????? ".$furl;
