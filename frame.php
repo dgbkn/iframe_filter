@@ -21,16 +21,22 @@ $dom = new DOMDocument();
 $dom->loadHTML($html);
 $script = $dom->getElementsByTagName('script');
 
-$remove = [];
 foreach($script as $item)
 {
-  $remove[] = $item;
+   if($item->getAttribute('src')) {
+          $old = $item->getAttribute('src');
+          
+         if (strpos($old, '//') !== false) {
+        $item->setAttribute('src',$mydomain."javascriptfilter.php?jurl=".$old);
+         }
+         else if($old[0]=='/'){
+         $item->setAttribute('src',$mydomain."javascriptfilter.php?jurl=".$old);
+
+         }
+        $item->setAttribute('src',$mydomain."javascriptfilter.php?jurl=".$old);
+    }
 }
 
-foreach ($remove as $item)
-{
-  $item->parentNode->removeChild($item); 
-}
 
 $html = $dom->saveHTML();
 
@@ -42,8 +48,8 @@ $raw=str_replace("prompt(","isNull(",$raw);
 $raw=str_replace("Confirm: (","isNull(",$raw);
 
 // Modify the javascript links so they go though a filter.
-$raw=str_replace("script type=\"text/javascript\" src=\"","script type=\"text/javascript\" src=\"".$mydomain."javascriptfilter.php?jurl=",$raw);
-$raw=str_replace("script src=","script src=".$mydomain."javascriptfilter.php?jurl=",$raw);
+//$raw=str_replace("script type=\"text/javascript\" src=\"","script type=\"text/javascript\" src=\"".$mydomain."javascriptfilter.php?jurl=",$raw);
+//$raw=str_replace("script src=","script src=".$mydomain."javascriptfilter.php?jurl=",$raw);
 
 // $raw = str_replace("domicileperil.com","lol.com",$raw);
 //Or kill js files
