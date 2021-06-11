@@ -17,6 +17,26 @@ $raw = file_get_contents($furl);
 
 $mydomain="https://flixe.herokuapp.com/";
 
+
+$dom = new DOMDocument();
+
+$dom->loadHTML($html);
+
+$script = $dom->getElementsByTagName('script');
+
+$remove = [];
+foreach($script as $item)
+{
+  $remove[] = $item;
+}
+
+foreach ($remove as $item)
+{
+  $item->parentNode->removeChild($item); 
+}
+
+
+
 //Kill anoying popups.
 $raw=str_replace("alert(","isNull(",$raw);
 $raw=str_replace("window.open","isNull",$raw);
