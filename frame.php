@@ -14,6 +14,7 @@ function get_domain($url)
 $furl=trim($_GET["furl"]);
 // echo "Given Url is ????? ".$furl;
 $raw = file_get_contents($furl);
+$html = $raw;
 
 $mydomain="https://flixe.herokuapp.com/";
 
