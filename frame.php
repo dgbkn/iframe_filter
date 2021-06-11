@@ -12,6 +12,15 @@ function get_domain($url)
 
 //Get the raw html.
 $furl=trim($_GET["furl"]);
+
+$formattedurl = parseUrl($furl);
+
+$pathwfile = $formattedurl['scheme']."://".$formattedurl['host'].$formattedurl['path'];
+
+$pathonly = str_replace($formattedurl['file'],"",$formattedurl['path']);
+
+$pathwofile = $formattedurl['scheme']."://".$formattedurl['host'].$pathonly;
+
 // echo "Given Url is ????? ".$furl;
 $raw = file_get_contents($furl);
 $html = $raw;
