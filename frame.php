@@ -32,8 +32,9 @@ foreach($script as $item)
          else if($old[0]=='/'){
          $item->setAttribute('src',$mydomain."javascriptfilter.php?jurl=".$old);
 
+         }else{
+          $item->setAttribute('src',$mydomain."javascriptfilter.php?jurl=".$old);
          }
-        $item->setAttribute('src',$mydomain."javascriptfilter.php?jurl=".$old);
     }
 }
 
