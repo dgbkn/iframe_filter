@@ -4,10 +4,26 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+function parseUrl($url) {
+    $r  = "^(?:(?P<scheme>\w+)://)?";
+    $r .= "(?:(?P<login>\w+):(?P<pass>\w+)@)?";
+    $r .= "(?P<host>(?:(?P<subdomain>[\w\.]+)\.)?" . "(?P<domain>\w+\.(?P<extension>\w+)))";
+    $r .= "(?::(?P<port>\d+))?";
+    $r .= "(?P<path>[\w/]*/(?P<file>\w+(?:\.\w+)?)?)?";
+    $r .= "(?:\?(?P<arg>[\w=&]+))?";
+    $r .= "(?:#(?P<anchor>\w+))?";
+    $r = "!$r!";                                                // Delimiters
+   
+    preg_match ( $r, $url, $out );
+   
+    return $out;
+}
+
+
 //Get the raw html.
 $furl=trim($_GET["furl"]);
 
-$formattedurl = parse_url($furl);
+$formattedurl = parseUrl($furl);
 
 $pathwfile = $formattedurl['scheme']."://".$formattedurl['host'].$formattedurl['path'];
 $domain = $formattedurl['scheme']."://".$formattedurl['host'];
