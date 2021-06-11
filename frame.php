@@ -43,6 +43,7 @@ foreach($script as $item)
 
 $html = $dom->saveHTML();
 
+$raw = $html;
 
 //Kill anoying popups.
 $raw=str_replace("alert(","isNull(",$raw);
